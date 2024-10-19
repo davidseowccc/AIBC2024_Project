@@ -24,22 +24,11 @@ from langchain_groq import ChatGroq
 import warnings
 warnings.filterwarnings("ignore")
 
-# # un-comment when in vs-code
-# load_dotenv('.env')
-# client = Groq(api_key=os.getenv('GROQ_KEY'))
-
 # for streamlit
 client = Groq(
     api_key=st.secrets["GROQ_KEY"],)
 
-
-# # upload file
-# filepath = './data/table_np_csv.csv'
-# with open(filepath, 'r') as file:
-#     # df = pd.read_csv(file)
-#     df = pd.read_csv(file, encoding="ISO-8859-1", index_col=0)
-
-def get_completion_by_messages(messages, model="mixtral-8x7b-32768", temperature=0, top_p=1.0, max_tokens=1024, n=1):
+def get_completion_by_messages(messages, model="llama-3.2-11b-vision-preview", temperature=0, top_p=1.0, max_tokens=1024, n=1):
     response = client.chat.completions.create(
         model=model,
         messages=messages,
