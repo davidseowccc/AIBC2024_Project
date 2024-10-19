@@ -16,3 +16,4 @@ transformers
 sentence_transformers
 torch
 chromadb
+protobuf
