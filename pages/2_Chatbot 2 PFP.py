@@ -68,7 +68,7 @@ def get_completion_by_messages(messages, model="mixtral-8x7b-32768", temperature
 #         # df = pd.read_csv(file)
 #         df = pd.read_csv(file, encoding="ISO-8859-1")
 
-    url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/blob/main/data/table_pfpnp_csv.csv'
+    url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/table_pfpnp_csv.csv'
     df = pd.read_csv(url, encoding="ISO-8859-1")
     
     product_details=df
