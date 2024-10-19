@@ -41,7 +41,7 @@ API_KEY = os.getenv('GROQ_KEY')
 #     # df = pd.read_csv(file)
 #     loader = PyPDFLoader(filepath)
 
-url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/blob/main/data/2024NP_merged.pdf'
+url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/2024NP_merged.pdf'
 loader = PyPDFLoader(url)
 
 # # URL of the raw JSON file on GitHub
