@@ -11,14 +11,15 @@ import streamlit as st
 #     json_string = file.read()
 #     dict_of_courses = json.loads(json_string)
 
-# upload file
-filepath = './data/table_np_csv.csv'
-with open(filepath, 'r') as file:
-    # df = pd.read_csv(file)
-    df = pd.read_csv(file, encoding="ISO-8859-1")
+# # upload file
+# filepath = './data/table_np_csv.csv'
+# with open(filepath, 'r') as file:
+#     # df = pd.read_csv(file)
+#     df = pd.read_csv(file, encoding="ISO-8859-1")
 
 # # URL of the raw JSON file on GitHub
-# url = 'https://raw.githubusercontent.com/davidseowccc/AI_Bootcamp_2024_DS/main/week-07-david/data/courses-full.json'
+url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/blob/main/data/table_np_csv.csv'
+df = pd.read_csv(url, encoding="ISO-8859-1")
 
 # # Fetch the JSON file from GitHub
 # response = requests.get(url)
