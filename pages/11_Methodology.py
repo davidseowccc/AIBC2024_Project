@@ -7,10 +7,12 @@ st.set_page_config(
 )
 # endregion <--------- Streamlit App Configuration --------->
 
+url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/FlowChart.jpg'
+
 st.title("Project Methodology")
 # st.text("This project is created by David Seow on 20 Sep 2024 \nwith skills obtained from the AI Bootcamp 2024.")
 st.write("\n")
-st.image("./data/flowchart.jpg", caption="Methodology Flowchart")
+st.image(url, caption="Methodology Flowchart")
 
 st.write('''
 \n\n1. The flowchart depicts the programme logic for the RAG-LLM chatbot and the 3 use cases; namely,
