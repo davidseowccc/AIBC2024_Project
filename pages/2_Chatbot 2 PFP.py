@@ -25,25 +25,19 @@ from langchain_groq import ChatGroq
 import warnings
 warnings.filterwarnings("ignore")
 
-# un-comment when in vs-code
-load_dotenv('.env')
-client = Groq(api_key=os.getenv('GROQ_KEY'))
+# # un-comment when in vs-code
+# load_dotenv('.env')
+# client = Groq(api_key=os.getenv('GROQ_KEY'))
 
-# # for streamlit
-# client = Groq(
-#     api_key=st.secrets["GROQ_KEY"],)
-
+# for streamlit
+client = Groq(
+    api_key=st.secrets["GROQ_KEY"],)
 
 # # upload file
 # filepath = './data/table_np_csv.csv'
 # with open(filepath, 'r') as file:
 #     # df = pd.read_csv(file)
 #     df = pd.read_csv(file, encoding="ISO-8859-1", index_col=0)
-
-
-# # URL of the raw JSON file on GitHub
-# url = 'https://raw.githubusercontent.com/davidseowccc/AI_Bootcamp_2024_DS/main/week-07-david/data/courses-full.json'
-# df = pd.read_csv(url, index_col=0, encoding="ISO-8859-1")
 
 def get_completion_by_messages(messages, model="mixtral-8x7b-32768", temperature=0, top_p=1.0, max_tokens=1024, n=1):
     response = client.chat.completions.create(
@@ -83,7 +77,8 @@ def generate_response(user_message):
     
     This is the understanding when queries ask:
     1. The lower the COP or ELR2B2, the better the student intake quality
-    2. Best course are those with lowest cutoff points or COP or ELR2B2.
+    2. Best course are those with lowest cutoff points or COP.
+    3. PFP or Poly Foundation Programme are for students with Normal (Academic) Qualifications only.
 
     Step 1:{delimiter} If the user is asking about course, \
     understand the relevant course(s) from the following list.
@@ -170,37 +165,3 @@ if form.form_submit_button("Submit"):
 
     st.divider()
 
-    #df
-
-
-    # '''
-    # Step 1:{delimiter} If the user is asking about course, \
-    # understand the relevant course(s) from the following list.
-    # All available courses shown in the data below:
-    # {product_details}
-
-    # Step 2:{delimiter} Use the information about the course to \
-    # generate the answer for the customer's query.
-    # You must only rely on the facts or information in the course information.
-    # Your response should be as detail as possible and \
-    # include information that is useful for customer to better understand the course.
-
-    # Step 3:{delimiter}: Answer the customer in a friendly tone.
-    # Make sure the statements are factually accurate.
-    # Your response should be comprehensive and informative to help the \
-    # the customers to make their decision.
-    # Promote Ngee Ann Polytechnic where applicable.
-    # Complete with details such as rating, ELR2B2 or ELMAB3 trending and skills to be learnt.
-    # Use Neural Linguistic Programming to construct your response.
-
-    # Use the following format:
-    # Always tell customer 'This dataset is collated from past JAE/PFPAE data and scraped from Poly/JC COPs 2024 (10 year trend): https://docs.google.com/spreadsheets/d/14b5VLIr9W5teiOp0vCg86B6xxpFiwk8jeIzwbdJmWjU/pubhtml#' 
-    # Step 1:{delimiter} <step 1 reasoning>
-    # Step 2:{delimiter} <step 2 reasoning>
-    # Step 3:{delimiter} <step 3 response to customer>
-
-    # Make sure to include {delimiter} to separate every step.
-
-    # If you don't know the answer, tell the user to send the query to NP admissions mailbox at 'admissions@np.edu.sg'.
-
-    # """
