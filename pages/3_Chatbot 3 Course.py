@@ -114,7 +114,7 @@ st.set_page_config(
 )
 # endregion <--------- Streamlit App Configuration --------->
 
-st.title("Course Query Chatbot")
+st.title("Course Query Chatbot [Work In Progress]")
 st.text("David Seow, 15 Oct 2024")
 
 form = st.form(key="form")
