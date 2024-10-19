@@ -61,5 +61,11 @@ with st.expander("Project Details required by AI Bootcamp"):
         1. Data Preparation and Loading using computer vision and parsing
         2. RAG operations using pandas tables and Chroma Vector Stores
         3. GROQ and Huggingface LLMs were deployed
+
+        #### GITHUB Link
+        https://github.com/davidseowccc/AIBC2024_Project/blob/main/README.md
+
+        #### Streamlit Link
+        https://npjae-chatbot.streamlit.app/
     ''')
 
