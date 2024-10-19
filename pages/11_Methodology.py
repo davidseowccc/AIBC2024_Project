@@ -29,5 +29,6 @@ before replying the user.
 based on open source documents compiled into one PDF. The pdf document is uploaded via
 PDF loader, split-&-chunk and transformed to vector embeddings in a vector store. The LLM
 references this vector store before replying the user.
+COLAB link: https://colab.research.google.com/drive/1xaVeD4VCX_MqQ9f98FUPi4YekSRbRIVT?usp=sharing
         
 ''')
