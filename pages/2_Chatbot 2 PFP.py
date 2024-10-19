@@ -147,7 +147,7 @@ def generate_response(user_message):
 # region <--------- Streamlit App Configuration --------->
 st.set_page_config(
     layout="centered",
-    page_title="NP PFP COPs 2014-2024  - Chatbot"
+    page_title="NP PFP COPs 2022-2024  - Chatbot"
 )
 # endregion <--------- Streamlit App Configuration --------->
 
