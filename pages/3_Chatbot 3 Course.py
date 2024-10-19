@@ -1,11 +1,17 @@
 # run in windows command prompt: python -m streamlit run main.py
 
+# https://discuss.streamlit.io/t/issues-with-chroma-and-sqlite/47950/4
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # Set up and run this Streamlit App
 import streamlit as st
 import os
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+
 
 # import libraries
 from groq import Groq
