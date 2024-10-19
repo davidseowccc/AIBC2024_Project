@@ -13,7 +13,7 @@ st.title("Course Query Chatbot")
 
 with st.expander("Credits"):
     st.write('''
-        This project is created by David Seow on 15 Sep 2024 \nwith skills obtained from the AI Bootcamp 2024.
+        This project is created by David Seow on 20 Oct 2024 \nwith skills obtained from the AI Bootcamp 2024.
     ''')
 
 with st.expander("How to use this app"):
