@@ -43,6 +43,7 @@ with st.expander("Project Details required by AI Bootcamp"):
         
         #### Data Sources
         1. Admissions Data
+        
         For the 2 admissions exercises, the data source is from open source:
         https://docs.google.com/spreadsheets/d/14b5VLIr9W5teiOp0vCg86B6xxpFiwk8jeIzwbdJmWjU/pubhtml#
             
