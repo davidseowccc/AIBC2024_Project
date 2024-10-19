@@ -30,5 +30,7 @@ based on open source documents compiled into one PDF. The pdf document is upload
 PDF loader, split-&-chunk and transformed to vector embeddings in a vector store. The LLM
 references this vector store before replying the user.
 COLAB link: https://colab.research.google.com/drive/1xaVeD4VCX_MqQ9f98FUPi4YekSRbRIVT?usp=sharing
-        
+
+4. GITHUB Link
+https://github.com/davidseowccc/AIBC2024_Project/blob/main/README.md
 ''')
