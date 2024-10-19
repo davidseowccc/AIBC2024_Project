@@ -45,16 +45,21 @@ with st.expander("Project Details required by AI Bootcamp"):
         1. Admissions Data
         For the 2 admissions exercises, the data source is from open source:
         https://docs.google.com/spreadsheets/d/14b5VLIr9W5teiOp0vCg86B6xxpFiwk8jeIzwbdJmWjU/pubhtml#
-        \n\ta. Screencapture and computer-vision parsing has to be done to extract the data
-        \n\tb. Thereafter data prep and cleansing has to be done.
-        \n\tc. The data is loaded via pandas and used in RAG operations within the LLM chatbot
+            
+            a. Screencapture and computer-vision parsing has to be done to extract the data
+            
+            b. Thereafter data prep and cleansing has to be done.
+            
+            c. The data is loaded via pandas and used in RAG operations within the LLM chatbot
         2. Ngee Ann Polytechnic Course Brochure
-        \n\ta. For the course brochure, various brochures from ngee ann polytechnic websites were downloaded and merged. 
-        \n\tb. Pdf parsing were conducted in python script and stored as vector database for the RAG LLM chatbot. 
+            
+            a. For the course brochure, various brochures from ngee ann polytechnic websites were downloaded and merged. 
+            
+            b. Pdf parsing were conducted in python script and stored as vector database for the RAG LLM chatbot. 
                 
         #### Features
-        \n\ta. Data Preparation and Loading using computer vision and parsing
-        \n\tb. RAG operations using pandas tables and Chroma Vector Stores
-        \n\tc. GROQ and Huggingface LLMs were deployed
+        1. Data Preparation and Loading using computer vision and parsing
+        2. RAG operations using pandas tables and Chroma Vector Stores
+        3. GROQ and Huggingface LLMs were deployed
     ''')
 
