@@ -24,13 +24,13 @@ from langchain_groq import ChatGroq
 import warnings
 warnings.filterwarnings("ignore")
 
-# un-comment when in vs-code
-load_dotenv('.env')
-client = Groq(api_key=os.getenv('GROQ_KEY'))
+# # un-comment when in vs-code
+# load_dotenv('.env')
+# client = Groq(api_key=os.getenv('GROQ_KEY'))
 
-# # for streamlit
-# client = Groq(
-#     api_key=st.secrets["GROQ_KEY"],)
+# for streamlit
+client = Groq(
+    api_key=st.secrets["GROQ_KEY"],)
 
 
 # # upload file
@@ -38,11 +38,6 @@ client = Groq(api_key=os.getenv('GROQ_KEY'))
 # with open(filepath, 'r') as file:
 #     # df = pd.read_csv(file)
 #     df = pd.read_csv(file, encoding="ISO-8859-1", index_col=0)
-
-
-# # URL of the raw JSON file on GitHub
-# url = 'https://raw.githubusercontent.com/davidseowccc/AI_Bootcamp_2024_DS/main/week-07-david/data/courses-full.json'
-# df = pd.read_csv(url, index_col=0, encoding="ISO-8859-1")
 
 def get_completion_by_messages(messages, model="mixtral-8x7b-32768", temperature=0, top_p=1.0, max_tokens=1024, n=1):
     response = client.chat.completions.create(
@@ -62,12 +57,6 @@ def get_completion_by_messages(messages, model="mixtral-8x7b-32768", temperature
 
 
 def generate_response(user_message):
-    # # upload file
-    # filepath = './data/table_np_csv.csv'
-    # with open(filepath, 'r') as file:
-    #     # df = pd.read_csv(file)
-    #     df = pd.read_csv(file, encoding="ISO-8859-1")
-
     url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/table_np_csv.csv'
     df = pd.read_csv(url, encoding="ISO-8859-1")
     product_details=df
@@ -87,6 +76,7 @@ def generate_response(user_message):
     This is the understanding when queries ask:
     1. The lower the COP or ELR2B2, the better the student intake quality
     2. Best course are those with lowest cutoff points or COP or ELR2B2.
+    3. JAE is for O-Level (or Ordinary Level) Qualifications. 
 
     Step 1:{delimiter} If the user is asking about course, \
     understand the relevant course(s) from the following list.
