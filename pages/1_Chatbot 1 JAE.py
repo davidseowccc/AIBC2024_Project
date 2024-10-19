@@ -68,7 +68,7 @@ def generate_response(user_message):
     #     # df = pd.read_csv(file)
     #     df = pd.read_csv(file, encoding="ISO-8859-1")
 
-    url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/blob/main/data/table_np_csv.csv'
+    url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/table_np_csv.csv'
     df = pd.read_csv(url, encoding="ISO-8859-1")
     product_details=df
 
