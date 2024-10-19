@@ -35,11 +35,14 @@ API_KEY = os.getenv('GROQ_KEY')
 # client = Groq(
 #     api_key=st.secrets["GROQ_KEY"],)
 
-# upload file
-filepath = './data/2024NP_merged.pdf'
-with open(filepath, 'r') as file:
-    # df = pd.read_csv(file)
-    loader = PyPDFLoader(filepath)
+# # upload file
+# filepath = './data/2024NP_merged.pdf'
+# with open(filepath, 'r') as file:
+#     # df = pd.read_csv(file)
+#     loader = PyPDFLoader(filepath)
+
+url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/blob/main/data/2024NP_merged.pdf'
+loader = PyPDFLoader(url)
 
 # # URL of the raw JSON file on GitHub
 # url = 'https://raw.githubusercontent.com/davidseowccc/AI_Bootcamp_2024_DS/main/week-07-david/data/courses-full.json'
