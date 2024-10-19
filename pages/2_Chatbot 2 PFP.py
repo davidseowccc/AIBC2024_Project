@@ -7,6 +7,7 @@ import os
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+import urllib
 
 # import libraries
 from groq import Groq
@@ -61,13 +62,7 @@ def get_completion_by_messages(messages, model="mixtral-8x7b-32768", temperature
     return response.choices[0].message.content
 
 
-# def generate_response(user_message):
-#     # upload file
-#     filepath = './data/table_pfpnp_csv.csv'
-#     with open(filepath, 'r') as file:
-#         # df = pd.read_csv(file)
-#         df = pd.read_csv(file, encoding="ISO-8859-1")
-
+def generate_response(user_message):
     url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/table_pfpnp_csv.csv'
     df = pd.read_csv(url, encoding="ISO-8859-1")
     
