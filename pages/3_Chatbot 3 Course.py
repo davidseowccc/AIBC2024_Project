@@ -37,22 +37,8 @@ load_dotenv('.env')
 API_KEY = os.getenv('GROQ_KEY')
 # client = Groq(api_key=os.getenv('GROQ_KEY'))
 
-# # for streamlit
-# client = Groq(
-#     api_key=st.secrets["GROQ_KEY"],)
-
-# # upload file
-# filepath = './data/2024NP_merged.pdf'
-# with open(filepath, 'r') as file:
-#     # df = pd.read_csv(file)
-#     loader = PyPDFLoader(filepath)
-
 url = 'https://raw.githubusercontent.com/davidseowccc/AIBC2024_Project/main/data/2024NP_merged.pdf'
 loader = PyPDFLoader(url)
-
-# # URL of the raw JSON file on GitHub
-# url = 'https://raw.githubusercontent.com/davidseowccc/AI_Bootcamp_2024_DS/main/week-07-david/data/courses-full.json'
-# loader = PyPDFLoader(url)
 
 data = loader.load_and_split()
 # text_splitter = CharacterTextSplitter(chunk_size=512, chunk_overlap=128)
@@ -69,12 +55,43 @@ texts = text_splitter.split_documents(data)
 # Strong performance on tasks that require fast and accurate text classification, sentiment analysis, and language modeling
 embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-vectorstore = Chroma.from_documents(
-    # collection_name="about_JAE2025",
-    # documents=texts,
-    documents=data,
-    embedding=embedding,
-)
+
+# # on local
+# vectorstore = Chroma.from_documents(
+#     # collection_name="about_JAE2025",
+#     # documents=texts,
+#     documents=data,
+#     embedding=embedding,
+# )
+
+######################################################################
+# Reference:
+# 1. https://gist.github.com/gettingstartedwithai/b5be6af064801d695592648259b3d2ba
+# 2. https://docs.trychroma.com/integrations/streamlit
+# 3. 
+
+# Load the Chroma database from disk
+vectorstore = Chroma(persist_directory="data", 
+                   embedding_function=embeddings,
+                   collection_name="lc_chroma_demo")
+
+# Get the collection from the Chroma database
+collection = vectorstore.get()
+
+# If the collection is empty, create a new one
+if len(collection['ids']) == 0:
+    # Create a new Chroma database from the documents
+    vectorstore = Chroma.from_documents(
+        documents=data, 
+        embedding=embedding, 
+        persist_directory="data1",
+        collection_name="lc_chroma_demo"
+    )
+
+    # Save the Chroma database to disk
+    vectorstore.persist()
+
+######################################################################
 
 # model1="llama-3.1-70b-versatile"
 # model1="llama-3.2-11b-vision-preview"
@@ -89,7 +106,6 @@ llm = ChatGroq(
     api_key=API_KEY
     # other params...
 )
-
 
 qa = RetrievalQA.from_chain_type(
     llm,
