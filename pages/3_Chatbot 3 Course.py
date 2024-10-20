@@ -72,7 +72,7 @@ embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L
 
 # Load the Chroma database from disk
 vectorstore = Chroma(persist_directory="data", 
-                   embedding_function=embeddings,
+                   embedding_function=embedding,
                    collection_name="lc_chroma_demo")
 
 # Get the collection from the Chroma database
