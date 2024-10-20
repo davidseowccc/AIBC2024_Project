@@ -1,4 +1,7 @@
 AI Champions Bootcamp coursework are archived here.
+
+Streamlit link: https://npjae-chatbot.streamlit.app/
+
 <h1 align="center">
   <br>
 
