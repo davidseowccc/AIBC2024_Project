@@ -11,6 +11,7 @@ import os
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+import sqlite3
 
 
 # import libraries
