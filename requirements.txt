@@ -15,6 +15,6 @@ langchain-chroma
 transformers 
 sentence_transformers
 torch
-chromadb
-protobuf
-pysqlite3-binary
+chromadb==0.4.0
+protobuf==3.20.0
+pysqlite3-binary==0.5.4
