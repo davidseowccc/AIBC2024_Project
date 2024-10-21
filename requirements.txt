@@ -17,4 +17,4 @@ sentence_transformers
 torch
 chromadb==0.4.0
 protobuf==3.20.0
-pysqlite3-binary==0.5.4
+pysqlite3-binary
